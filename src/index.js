@@ -60,6 +60,49 @@ console.log(object3.name);
 const fieldName = 'age'
 console.log(object1[fieldName])
 
+//object methods and this   - brief overview as newer versions of react use hooks where there is no need for defining objects with methods 
+//we can assign methods to an object by defining properties that are functions 
+
+const arto = {
+  name: 'Arto Hellas', 
+  age: 35, 
+  education: 'PhD',
+  greet: function(){
+    console.log('hello, my name is ' + this.name)
+  },
+  doAddition: function(a,b){
+    console.log(a + b)
+  }
+}
+
+// arto.greet()
+// const referenceToGreet = arto.greet
+// referenceToGreet() //this is undef
+
+setTimeout(arto.greet, 1000) //hello my name is 
+
+//mechanisms to preserve the original this 
+//1. bind 
+setTimeout(arto.greet.bind(arto), 1000) // hello my name is arto hellas
+
+
+
+//storing a method reference in a variable and calling the method through the variable:
+arto.doAddition(1,4) // prints 5
+const referenceToAddition = arto.doAddition
+referenceToAddition(10,15) // prints 25
+
+//methods can be assigned to objects even after the creation of the object 
+arto.growOlder = function(){
+  this.age +=1
+}
+
+arto.greet()
+arto.growOlder()
+console.log(arto.age)
+
+
+
 const Hello = (props) => {
   return (
     <div>
@@ -118,5 +161,8 @@ ReactDOM.render(<App />, document.getElementById('root'))
     //     {a} plus {b} is {a + b}
     //   </p>
     // </div>
+
+
+
 
 ReactDOM.render(<App/>, document.getElementById('root'))
