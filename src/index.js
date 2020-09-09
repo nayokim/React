@@ -79,28 +79,44 @@ const arto = {
 // const referenceToGreet = arto.greet
 // referenceToGreet() //this is undef
 
-setTimeout(arto.greet, 1000) //hello my name is 
+// setTimeout(arto.greet, 1000) //hello my name is 
 
-//mechanisms to preserve the original this 
-//1. bind 
-setTimeout(arto.greet.bind(arto), 1000) // hello my name is arto hellas
+// //mechanisms to preserve the original this 
+// //1. bind 
+// setTimeout(arto.greet.bind(arto), 1000) // hello my name is arto hellas
 
 
 
 //storing a method reference in a variable and calling the method through the variable:
-arto.doAddition(1,4) // prints 5
-const referenceToAddition = arto.doAddition
-referenceToAddition(10,15) // prints 25
+// arto.doAddition(1,4) // prints 5
+// const referenceToAddition = arto.doAddition
+// referenceToAddition(10,15) // prints 25
 
 //methods can be assigned to objects even after the creation of the object 
 arto.growOlder = function(){
   this.age +=1
 }
 
-arto.greet()
-arto.growOlder()
-console.log(arto.age)
+// arto.greet()
+// arto.growOlder()
+// console.log(arto.age)
 
+// Classes 
+class Person{
+  constructor (name, age){
+    this.name = name
+    this.age = age
+  }
+  greet(){
+    console.log('hello, my name is ' + this.name)
+  }
+}
+
+const adam = new Person ('Adam Ondra', 35)
+adam.greet()
+
+const nayo = new Person ('Nayo', 30)
+nayo.greet()
 
 
 const Hello = (props) => {
