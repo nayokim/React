@@ -54,6 +54,9 @@ const object3 = {
 }
 
 console.log(object1.name)
+console.log(object2.name);
+console.log(object3.name);
+
 const fieldName = 'age'
 console.log(object1[fieldName])
 
