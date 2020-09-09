@@ -18,8 +18,6 @@ import ReactDOM from 'react-dom'
 // a => a + 100; 
 
 
-
-
 const t = [1,2,3]
 //map creates a new array which the function given as a parameter is used to create the items. 
 const m1 = t.map(value => value * 2)
@@ -30,6 +28,34 @@ console.log(m1)
 
 const m2 = t.map(value => '<li>' + value + '</li>')
 console.log(m2)
+
+
+//object literals 
+
+const object1 = {
+  name:"arto hellas",
+  age: 35, 
+  education: 'phd'
+}
+
+const object2 = {
+  name: 'full stack web application development', 
+  level: 'intermediate studies',
+  size: 5,
+}
+
+const object3 = {
+  name: {
+    first: 'dan', 
+    last: 'abramov',
+  }, 
+  grades: [2,3,5,3],
+  department: 'Stanford University',
+}
+
+console.log(object1.name)
+const fieldName = 'age'
+console.log(object1[fieldName])
 
 const Hello = (props) => {
   return (
