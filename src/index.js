@@ -1,9 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+//arrow function review 
+// function(a) {
+//   return a + 100; 
+// }
+
+//1. remove the word "function" and place arrow between the argument and opening body bracket 
+// (a) => {
+//   return a + 100; 
+// }
+
+//2. remove the body brackets and word "return"  -- the return is implied 
+// (a) => a + 100; 
+
+//3. remove the argument parentheses
+// a => a + 100; 
+
+
+
+
 const t = [1,2,3]
+//map creates a new array which the function given as a parameter is used to create the items. 
 const m1 = t.map(value => value * 2)
+//function (value) {
+//   return value * 2; 
+// }
 console.log(m1)
+
+const m2 = t.map(value => '<li>' + value + '</li>')
+console.log(m2)
 
 const Hello = (props) => {
   return (
