@@ -24,10 +24,10 @@ const m1 = t.map(value => value * 2)
 //function (value) {
 //   return value * 2; 
 // }
-console.log(m1)
+// console.log(m1)
 
 const m2 = t.map(value => '<li>' + value + '</li>')
-console.log(m2)
+// console.log(m2)
 
 
 //object literals 
@@ -53,12 +53,12 @@ const object3 = {
   department: 'Stanford University',
 }
 
-console.log(object1.name)
-console.log(object2.name);
-console.log(object3.name);
+// console.log(object1.name)
+// console.log(object2.name);
+// console.log(object3.name);
 
 const fieldName = 'age'
-console.log(object1[fieldName])
+// console.log(object1[fieldName])
 
 //object methods and this   - brief overview as newer versions of react use hooks where there is no need for defining objects with methods 
 //we can assign methods to an object by defining properties that are functions 
@@ -113,10 +113,10 @@ class Person{
 }
 
 const adam = new Person ('Adam Ondra', 35)
-adam.greet()
+// adam.greet()
 
 const nayo = new Person ('Nayo', 30)
-nayo.greet()
+// nayo.greet()
 
 
 const Hello = (props) => {
