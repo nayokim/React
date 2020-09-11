@@ -1,4 +1,6 @@
-import React from 'react'
+//the application imports the useState function from the function body that defines the component : 
+//const [counter, setCounter] = useState(0)
+import React , {useState} from 'react'
 import ReactDOM from 'react-dom'
 
 //arrow function review 
@@ -168,15 +170,25 @@ import ReactDOM from 'react-dom'
 //   )
 // }
 
-const App = (props) => {
-  const { counter } = props;
-  return (<div>{counter}</div>
-  )
+const App = () => {
+  //The function call adds state to the component and renders it initialized with the value of zero.
+  //The counter variable is assigned the initial value of state which is zero. The variable setCounter is assigned to a function that will be used to modify the state.
+  const [counter, setCounter] = useState(0);
+
+  //The application calls the setTimeout function and passes it two parameters: a function to increment the counter state and a timeout of one second:
+  // react re-renders the component which means that the function body of the component function gets re-executed when setCounter is called 
+  // the second time the component function is executed, it calls the useState function and returns the new value of the state : 1 
+  setTimeout(() => setCounter(counter + 1), 1000);
+
+  //debug 
+  console.log('rendering ... ' , counter)
+
+  return <div>{counter}</div>;
 }
 
-let counter = 1
+// let counter = 1
 
-const refresh = () => {ReactDOM.render(<App counter = {counter} />, document.getElementById('root'))}
+ReactDOM.render(<App />, document.getElementById('root'))
 
 // refresh()
 // counter +=1
@@ -184,10 +196,10 @@ const refresh = () => {ReactDOM.render(<App counter = {counter} />, document.get
 // counter +=1
 // refresh()
 
-setInterval(() => {
-  refresh()
-  counter +=1
-},1000)
+// setInterval(() => {
+//   refresh()
+//   counter +=1
+// },1000)
 // const App = () => {
 //   console.log('Hello from component')
 
