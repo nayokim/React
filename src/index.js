@@ -179,7 +179,7 @@ const App = () => {
   //The application calls the setTimeout function and passes it two parameters: a function to increment the counter state and a timeout of one second:
   // react re-renders the component which means that the function body of the component function gets re-executed when setCounter is called 
   // the second time the component function is executed, it calls the useState function and returns the new value of the state : 1 
-  setTimeout(() => setCounter(counter + 1), 1000);
+  // setTimeout(() => setCounter(counter + 1), 1000);
 
 
   //debug 
@@ -188,11 +188,10 @@ const App = () => {
   return (
     <div>
       <div>{counter}</div>
-      <button onClick={() => console.log('clicked')}>
-      plus
-      </button>
+      <p>Pressing this button will increment the counter: </p>
+      <button onClick={() => setCounter(counter + 1)}>plus</button>
     </div>
-  )
+  );
 }
 
 // let counter = 1
