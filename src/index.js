@@ -190,6 +190,9 @@ const App = () => {
       <div>{counter}</div>
       <p>Pressing this button will increment the counter: </p>
       <button onClick={() => setCounter(counter + 1)}>plus</button>
+      <button onClick = {() => setCounter(0)}>
+      reset
+      </button>
     </div>
   );
 }
