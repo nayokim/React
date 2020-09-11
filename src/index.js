@@ -174,9 +174,7 @@ const App = () => {
   //The function call adds state to the component and renders it initialized with the value of zero.
   //The counter variable is assigned the initial value of state which is zero. The variable setCounter is assigned to a function that will be used to modify the state.
   const [counter, setCounter] = useState(0);
-  const handleClick = () => {
-    console.log('clicked')
-  }
+
 
   //The application calls the setTimeout function and passes it two parameters: a function to increment the counter state and a timeout of one second:
   // react re-renders the component which means that the function body of the component function gets re-executed when setCounter is called 
@@ -190,7 +188,9 @@ const App = () => {
   return (
     <div>
       <div>{counter}</div>
-      <button onClick={handleClick}>plus</button>
+      <button onClick={() => console.log('clicked')}>
+      plus
+      </button>
     </div>
   )
 }
