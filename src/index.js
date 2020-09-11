@@ -170,6 +170,12 @@ import ReactDOM from 'react-dom'
 //   )
 // }
 
+const Display = (props) => {
+  return (
+    <div>{props.counter}</div>
+  )
+  }
+
 const App = () => {
   //The function call adds state to the component and renders it initialized with the value of zero.
   //The counter variable is assigned the initial value of state which is zero. The variable setCounter is assigned to a function that will be used to modify the state.
@@ -191,7 +197,8 @@ const App = () => {
 
   return (
     <div>
-      <div>{counter}</div>
+     {/* <div>{counter}</div> */}
+     <Display counter = {counter}/>
       <p>Pressing buttons will increment / reset the counter: </p>
       <button onClick={increaseByOne}>plus</button>
       <button onClick = {setToZero}>
