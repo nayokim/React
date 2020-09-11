@@ -175,6 +175,10 @@ const App = () => {
   //The counter variable is assigned the initial value of state which is zero. The variable setCounter is assigned to a function that will be used to modify the state.
   const [counter, setCounter] = useState(0);
 
+  //the buttons attribute onClick value is set to the value to increment the counter. In simple functions, its fine. However, in more complex event handlers, it better to sep. the event handler to a sep. function
+  const increaseByOne = () => setCounter(counter + 1)
+  const setToZero = () => setCounter(0)
+
 
   //The application calls the setTimeout function and passes it two parameters: a function to increment the counter state and a timeout of one second:
   // react re-renders the component which means that the function body of the component function gets re-executed when setCounter is called 
@@ -188,9 +192,9 @@ const App = () => {
   return (
     <div>
       <div>{counter}</div>
-      <p>Pressing this button will increment the counter: </p>
-      <button onClick={() => setCounter(counter + 1)}>plus</button>
-      <button onClick = {() => setCounter(0)}>
+      <p>Pressing buttons will increment / reset the counter: </p>
+      <button onClick={increaseByOne}>plus</button>
+      <button onClick = {setToZero}>
       reset
       </button>
     </div>
