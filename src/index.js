@@ -170,16 +170,16 @@ import ReactDOM from 'react-dom'
 //   )
 // }
 
-const Display = (props) => {
+const Display = ({counter}) => {
   return (
-    <div>{props.counter}</div>
+    <div>{counter}</div>
   )
   }
 
-  const Button = (props)=>{
+  const Button = ({handleClick, text})=>{
     return (
-      <button onClick = {props.handleClick}>
-        {props.text}
+      <button onClick = {handleClick}>
+        {text}
       </button>
     )
   }
@@ -208,7 +208,7 @@ const App = () => {
     <div>
       {/* <div>{counter}</div> */}
       <Display counter={counter} />
-      <p>Pressing buttons will increment / reset the counter: </p>
+      <p>Pressing buttons will increment, reset, or decrement the counter: </p>
       {/* <button onClick={increaseByOne}>plus</button> */}
       <Button handleClick={increaseByOne} text="Plus" />
       {/* <button onClick = {setToZero}> */}
