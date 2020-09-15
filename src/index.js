@@ -1,5 +1,7 @@
 //the application imports the useState function from the function body that defines the component : 
 //const [counter, setCounter] = useState(0)
+
+// hooks - functions that let you "hook into" react state and lifecycle features from function components. 
 import React , {useState} from 'react'
 import ReactDOM from 'react-dom'
 
